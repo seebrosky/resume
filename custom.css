@@ -1,4 +1,4 @@
-/* CUSTOM STYLES & OVERRIDES */
+/* GLOBAL STYLES & OVERRIDES */
 
 .logo-title a {
     text-transform: uppercase;
@@ -24,6 +24,54 @@
     opacity: 1 !important;
     color: #f7b312 !important;
 }
+
+/* CUSTOM SCROLL TO TOP BUTTON */
+.button-top {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;	
+	z-index: 100;
+	width: 35px;
+	height: 35px;
+	font-size: 22px;
+	color: #fff;
+	background-color: #f7b312;
+	border-radius: 4px;
+	border: 0;
+	text-align: center;
+	cursor: pointer;
+	pointer-events: none;
+	opacity: 0;
+	transition: all .15s linear;
+}
+
+.button-top-visible {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.button-top-visible:hover {
+	color: #fff;
+	background-color: #ffa244;
+	transition: background-color 0.15s ease-in-out;
+}
+
+.button-top-visible .ticon {
+	width: 35px;
+	height: 35px;
+	text-decoration: none;
+}
+
+.ticon-chevron-up:before {
+	display: flex;
+	width: 35px;
+	height: 33px;
+	font-size: 22px;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+/* END SCROLL TO TOP BUTTON */
 
 .theme-button {
     text-transform: uppercase;
@@ -209,9 +257,9 @@ blockquote .white-text {
 }
 
 .footer-copyright {
-    font-size: 12px;
-    line-height: 40px;
-    color: #808080 !important;
+	font-size: 12px;
+	line-height: 40px;
+	color: #808080 !important;
 }
 
 
@@ -219,30 +267,42 @@ blockquote .white-text {
    ================= RESPONSIVE STYLES =================
    ===================================================== */
 
+/* Greater than tablets
+-------------------------------------------------------------- */
+@media only screen
+and (min-width: 768px) {
+}
+
+/* Tablet & Small Desktop Widths 768px - 1280px
+---------------------------------------------------------*/
+@media only screen
+and (min-width: 768px)
+and (max-width: 1280px) {
+}
 
 /* All Devices under 960px
 ---------------------------------------------------------*/
 @media only screen
 and (max-width: 959px) {
 
-  .np-main {
-      float: left !important;
-  }
+	.np-main {
+		float: left !important;
+	}
 
-  .address-col .vc_column-inner {
-      padding-top: 25px !important;      
-  }
-  
-  .tel-col .vc_column-inner,
-  .email-col .vc_column-inner {
-      padding-top: 0 !important;
-  }
-  
-  .footer-copyright,
-  .footer-social {
-	  display: block;
-      text-align: center !important;
-  }
+	.address-col .vc_column-inner {
+		padding-top: 25px !important;      
+	}
+
+	.tel-col .vc_column-inner,
+	.email-col .vc_column-inner {
+		padding-top: 0 !important;
+	}
+
+	.footer-copyright,
+	.footer-social {
+		display: block;
+		text-align: center !important;
+	}
 }
 
 /* Tablet Landscape
@@ -252,13 +312,13 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape) {
     
-  .footer-copyright {
-      text-align: left !important;
-  }
-  
-  .footer-social {
-      text-align: right !important;
-  }    
+	.footer-copyright {
+		text-align: left !important;
+	}
+
+	.footer-social {
+		text-align: right !important;
+	}    
 }
 
 /* Tablet Portrait
@@ -268,17 +328,17 @@ and (min-width: 768px)
 and (max-width: 959px)
 and (orientation : portrait) {
     
-  .portfolio-items .vc_col-sm-3 {
-    width: 50% !important;
-  }
-    
-  .footer-copyright {
-      text-align: left !important;
-  }
-  
-  .footer-social {
-      text-align: right !important;
-  }    
+	.portfolio-items .vc_col-sm-3 {
+		width: 50% !important;
+	}
+
+	.footer-copyright {
+		text-align: left !important;
+	}
+
+	.footer-social {
+		text-align: right !important;
+	}    
 }
 
 /* iPhone Portrait and Landscape
@@ -286,32 +346,36 @@ and (orientation : portrait) {
 @media only screen
 and (max-width: 767px) {
     
-  #site-header.overlay-header #site-header-inner {
-    padding-top: 12px !important;
-    padding-bottom: 8px !important;
-  }  
-    
-  .logo-title {
-      font-size: 13px !important;
-  }  
-  
-  #header-row {
-    padding-top: 120px !important;
-    padding-bottom: 55px !important;
-  }
-  
-  .portfolio-items .vc_col-sm-3 {
-    width: initial !important;
-  }  
-  
-  .vcex-typed-text-wrap .vcex-typed-text {
-      font-size: 20px !important;
-  }
+	#site-header.overlay-header #site-header-inner {
+		padding-top: 12px !important;
+		padding-bottom: 8px !important;
+	}  
 
-  .footer-copyright,
-  .footer-social {
-      text-align: center !important;
-  }    
+	.logo-title {
+		font-size: 13px !important;
+	}  
+
+	#header-row {
+		padding-top: 120px !important;
+		padding-bottom: 55px !important;
+	}
+
+	.portfolio-items .vc_col-sm-3 {
+		width: initial !important;
+	}  
+
+	.vcex-typed-text-wrap .vcex-typed-text {
+		font-size: 20px !important;
+	}
+
+	.button-top-visible {
+		display: none;
+	}
+
+	.footer-copyright,
+	.footer-social {
+		text-align: center !important;
+	}    
 }
 
 /* Phone Landscape
@@ -321,11 +385,11 @@ and (min-width: 480px)
 and (max-width: 767px)
 and (orientation : landscape) {
     
-    .logo-title {
-      font-size: 14px !important;
-    }
-    
-  .vcex-typed-text-wrap .vcex-typed-text {
-      font-size: 22px !important;
-  }    
+	.logo-title {
+		font-size: 14px !important;
+	}
+	
+	.vcex-typed-text-wrap .vcex-typed-text {
+		font-size: 22px !important;
+	}    
 }
