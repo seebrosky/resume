@@ -13,7 +13,10 @@ add_action( 'wpex_hook_site_logo_inner', 'custom_header_text', 20 );
 
 // ScrollTo JS FADES OUT TEXT AT TOP OF BROWSER
 function sk_enqueue_scripts() {
-    wp_enqueue_script( 'scrollTo', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.min.js', array( 'jquery' ), '1.4.5-beta', true );
+    // Register jQuery scrollTo script
+    wp_register_script( 'scrollTo', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.min.js', array( 'jquery' ), '2.1.3', true );
+
+    // Enqueue home.js, dependent on scrollTo
     wp_enqueue_script( 'home', get_stylesheet_directory_uri() . '/js/home.js', array( 'scrollTo' ), '', true );
 }
 add_action( 'wp_enqueue_scripts', 'sk_enqueue_scripts' );
@@ -29,7 +32,7 @@ add_filter( 'script_loader_src', 'wpex_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', 'wpex_remove_script_version', 15, 1 );
 
 
-// Visit https://resume.chrisbrosky.com/#work-experience to see these duration calculators in action
+// Visit https://resume.chrisbrosky.com/#work-experience to see these duration calculators in action //
 // CURRENT YEAR SHORTCODE
 function current_year() {
     return date('Y');
