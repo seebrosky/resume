@@ -9,7 +9,7 @@ add_action( 'wp_enqueue_scripts', 'total_child_enqueue_parent_theme_style' );
 function custom_header_text() { ?>
     <div class="logo-title clr">front-end developer</div>
 <?php }
-add_action( 'wpex_hook_site_logo_inner', 'custom_header_text', 10 );
+add_action( 'wpex_hook_site_logo_inner', 'custom_header_text', 20 );
 
 // ScrollTo JS FADES OUT TEXT AT TOP OF BROWSER
 function sk_enqueue_scripts() {
