@@ -1,0 +1,331 @@
+/* CUSTOM STYLES & OVERRIDES */
+
+.logo-title a {
+    text-transform: uppercase;
+    font-family: 'Opens Sans', sans-serif;
+    font-weight: 300;
+    color: #f7b312;
+    font-size: 14px;
+    margin-top: -5px;
+	text-decoration: none;
+}
+
+#site-navigation .dropdown-menu >li >a,
+#site-navigation .dropdown-menu >li >a:hover {
+    -webkit-transition: all 30ms ease-in-out;
+    -moz-transition: all 30ms ease-in-out;
+    -ms-transition: all 30ms ease-in-out;
+    -o-transition: all 30ms ease-in-out;
+    transition: all 30ms ease-in-out;    
+}
+
+#site-navigation .dropdown-menu >li >a:hover,
+#site-header.overlay-header.white-style.dyn-styles #site-navigation .dropdown-menu>li.menu-item>a:hover {
+    opacity: 1 !important;
+    color: #f7b312 !important;
+}
+
+.theme-button {
+    text-transform: uppercase;
+    letter-spacing: .07em;
+}
+
+.h2-title h4 {
+    font-size: 24px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 300 !important;
+    line-height: 26px;
+    color: #2c383c !important;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.dark-txt {
+    color: #fff;
+    text-shadow: 1px 1px 1px #333;
+}
+
+.dark-txt-2 {
+    text-shadow: 2px 2px 3px #111;
+}
+
+.normal-txt {
+    font-weight: 400;
+}
+
+.job-title {
+    color: #2b373b;
+    font-weight: 600;
+}
+
+.co-name {
+    color: #606060;
+    font-weight: 400;
+}
+
+.years {
+    font-size: 14px; 
+    font-weight: 300;
+}
+
+.vc_separator .vc_sep_holder .vc_sep_line {
+    top: 5px;
+}
+
+.vcex-typed-text-wrap .vcex-typed-text {
+    text-shadow: 1px 1px 2px #111;
+}
+
+.link-underline {
+	text-decoration: none;
+}
+
+a.link-underline:hover,
+.vcex-list_item.list-item-hover a:hover .vcex-list-item-text {
+    text-decoration: underline !important;
+}
+
+.expertise {
+    margin-left: 0 !important;
+    text-align: center;
+}
+.expertise li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.expertise li:first-child {
+    padding-left: 0 !important;
+}
+
+.expertise li:last-child {
+    padding-right: 0 !important;
+}
+
+.icon-star .ticon.ticon-star {
+    color: #f7b312;
+    font-size: 13px;
+    position: relative;
+    bottom: 1px;
+    margin-right: 8px;
+}
+
+.pie-value.vc_pie_chart .vc_pie_chart_value {
+    font-size: 24px !important;
+}
+
+.ref-section h3,
+.ref-section p,
+.ref-section span {
+    text-shadow: 1px 1px 1px #333;
+}
+
+.ref-title {
+    font-size: 14px;
+}
+
+blockquote {
+    margin-top: 20px;
+}
+
+blockquote .white-text {
+    font-size: 15px;
+    font-style: italic;
+    letter-spacing: 1.2px;
+}
+
+.vcex-icon-wrap .fa {
+    left: .05em;
+    position: relative;
+}
+
+.course-item ul {
+	margin-left: 17px;
+}
+
+.footer-builder .vc_column_container>.vc_column-inner {
+	margin-bottom: 10px !important;
+}
+
+#ctb-signature {
+    font-size: 36px;
+	color: #545e61;
+}
+
+
+/* PORTFOLIO STYLES */
+.vc_custom_heading.portfolio-grid {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vc_custom_heading .portfolio-link:hover {
+    opacity: 1 !important;
+}
+
+/* CONTACT FORM STYLES */
+.wpcf7 .wpex-row .span_1_of_1.col {
+    margin-bottom: 5px !important;
+}
+
+.wpcf7-form p {
+    margin-bottom: 0 !important;
+}
+
+.wpcf7 .wpcf7-response-output {
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.wpcf7 .col input[type="text"],
+.wpcf7 .col input[type="email"],
+.wpcf7 textarea.wpcf7-textarea {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    margin-top: 0 !important;
+    padding: 6px 8px 12px !important;
+    color: #4b525b;
+}
+
+.wpcf7 textarea {
+    height: 180px;
+}
+
+.wpcf7 #contact-submit-btn {
+    margin-top: 10px;
+}
+
+/* FOOTER STYLES */
+#footer-builder {
+    background-color: #2C3137;
+}
+
+.footer-row .wpex-vc-column-wrapper {
+    margin-bottom: 0 !important;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    line-height: 40px;
+    color: #808080 !important;
+}
+
+
+/* =====================================================
+   ================= RESPONSIVE STYLES =================
+   ===================================================== */
+
+
+/* All Devices under 960px
+---------------------------------------------------------*/
+@media only screen
+and (max-width: 959px) {
+
+  .np-main {
+      float: left !important;
+  }
+
+  .address-col .vc_column-inner {
+      padding-top: 25px !important;      
+  }
+  
+  .tel-col .vc_column-inner,
+  .email-col .vc_column-inner {
+      padding-top: 0 !important;
+  }
+  
+  .footer-copyright,
+  .footer-social {
+	  display: block;
+      text-align: center !important;
+  }
+}
+
+/* Tablet Landscape
+---------------------------------------------------------*/
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+    
+  .footer-copyright {
+      text-align: left !important;
+  }
+  
+  .footer-social {
+      text-align: right !important;
+  }    
+}
+
+/* Tablet Portrait
+---------------------------------------------------------*/
+@media only screen
+and (min-width: 768px)
+and (max-width: 959px)
+and (orientation : portrait) {
+    
+  .portfolio-items .vc_col-sm-3 {
+    width: 50% !important;
+  }
+    
+  .footer-copyright {
+      text-align: left !important;
+  }
+  
+  .footer-social {
+      text-align: right !important;
+  }    
+}
+
+/* iPhone Portrait and Landscape
+---------------------------------------------------------*/
+@media only screen
+and (max-width: 767px) {
+    
+  #site-header.overlay-header #site-header-inner {
+    padding-top: 12px !important;
+    padding-bottom: 8px !important;
+  }  
+    
+  .logo-title {
+      font-size: 13px !important;
+  }  
+  
+  #header-row {
+    padding-top: 120px !important;
+    padding-bottom: 55px !important;
+  }
+  
+  .portfolio-items .vc_col-sm-3 {
+    width: initial !important;
+  }  
+  
+  .vcex-typed-text-wrap .vcex-typed-text {
+      font-size: 20px !important;
+  }
+
+  .footer-copyright,
+  .footer-social {
+      text-align: center !important;
+  }    
+}
+
+/* Phone Landscape
+---------------------------------------------------------*/
+@media only screen
+and (min-width: 480px)
+and (max-width: 767px)
+and (orientation : landscape) {
+    
+    .logo-title {
+      font-size: 14px !important;
+    }
+    
+  .vcex-typed-text-wrap .vcex-typed-text {
+      font-size: 22px !important;
+  }    
+}
