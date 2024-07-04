@@ -11,16 +11,6 @@ function custom_header_text() { ?>
 <?php }
 add_action( 'wpex_hook_site_logo_inner', 'custom_header_text', 20 );
 
-// ScrollTo JS FADES OUT TEXT AT TOP OF BROWSER
-function sk_enqueue_scripts() {
-    // Register jQuery scrollTo script
-    wp_register_script( 'scrollTo', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.min.js', array( 'jquery' ), '2.1.3', true );
-
-    // Enqueue home.js, dependent on scrollTo
-    wp_enqueue_script( 'home', get_stylesheet_directory_uri() . '/js/home.js', array( 'scrollTo' ), '', true );
-}
-add_action( 'wp_enqueue_scripts', 'sk_enqueue_scripts' );
-
 // REMOVE QUERY STRINGS - excluding Google Fonts
 function wpex_remove_script_version( $src ) {
     if ( strpos( $src, 'ver=' ) ) {
