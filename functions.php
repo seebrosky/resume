@@ -1,31 +1,25 @@
 <?php
-//CALLS TOTAL'S DEFAULT CSS
+//CALLS THEME'S DEFAULT CSS
 function total_child_enqueue_parent_theme_style() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'total_child_enqueue_parent_theme_style' );
 
+// ENQUEUE CUSTOM SCRIPT FOR SCROLL TO TOP BUTTON
+function theme_enqueue_scripts() {
+    wp_enqueue_script( 'scroll-to-top', get_stylesheet_directory_uri() . '/js/scroll-to-top.js', array('jquery'), '1.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
+
 // CUSTOM FUNCTION TO ADD TEXT BELOW LOGO
 function custom_header_text() { ?>
-    <div class="logo-title clr">front-end developer</div>
+    <div class="logo-title clr"><a href="/">front-end developer</a></div>
 <?php }
 add_action( 'wpex_hook_site_logo_inner', 'custom_header_text', 20 );
 
-// REMOVE QUERY STRINGS - excluding Google Fonts
-function wpex_remove_script_version( $src ) {
-    if ( strpos( $src, 'ver=' ) ) {
-        $src = remove_query_arg( 'ver', $src );
-    }
-    return $src;
-}
-add_filter( 'script_loader_src', 'wpex_remove_script_version', 15, 1 );
-add_filter( 'style_loader_src', 'wpex_remove_script_version', 15, 1 );
 
-
-
-// CUSTOM FUNCTIONS TO CALCULATE TIME BETWEEN DATES
-// Visit https://resume.chrisbrosky.com/#work-experience to see these duration calculators in action //
-// CURRENT YEAR SHORTCODE
+// CUSTOM FUNCTIONS TO CALCULATE TIME BETWEEN DATES //
+// GET CURRENT YEAR
 function current_year() {
     return date('Y');
 }
@@ -67,19 +61,17 @@ function calculate_date_difference($atts) {
     // Calculate the difference
     $interval = $startDate->diff($endDate);
 
-    // Prepare the results
+    // Prepare the result components
     $years = $interval->y;
     $months = $interval->m;
 
-    // Format the results based on conditions
+    // Format the result based on conditions
     $result = '';
 
-    // Removes the letter 's' from 'years' if the value of years is <= 1 
     if ($years > 0) {
         $result .= $years . ' year' . ($years > 1 ? 's' : '');
     }
 
-    // Removes the letter 's' from 'months' if the value of months is <= 1 
     if ($months > 0) {
         if (!empty($result)) {
             $result .= ', ';
@@ -119,5 +111,15 @@ function calculate_year_difference_shortcode($atts) {
     return $difference;
 }
 add_shortcode('year_difference', 'calculate_year_difference_shortcode');
+
+// REMOVE QUERY STRINGS - Excluding Google Fonts
+function wpex_remove_script_version( $src ) {
+    if ( strpos( $src, 'ver=' ) ) {
+        $src = remove_query_arg( 'ver', $src );
+    }
+    return $src;
+}
+add_filter( 'script_loader_src', 'wpex_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', 'wpex_remove_script_version', 15, 1 );
 
 ?>
