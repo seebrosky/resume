@@ -32,6 +32,8 @@ add_filter( 'script_loader_src', 'wpex_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', 'wpex_remove_script_version', 15, 1 );
 
 
+
+// CUSTOM FUNCTIONS TO CALCULATE TIME BETWEEN DATES
 // Visit https://resume.chrisbrosky.com/#work-experience to see these duration calculators in action //
 // CURRENT YEAR SHORTCODE
 function current_year() {
@@ -82,10 +84,12 @@ function calculate_date_difference($atts) {
     // Format the results based on conditions
     $result = '';
 
+    // Removes the letter 's' from 'years' if the value of years is <= 1 
     if ($years > 0) {
         $result .= $years . ' year' . ($years > 1 ? 's' : '');
     }
 
+    // Removes the letter 's' from 'months' if the value of months is <= 1 
     if ($months > 0) {
         if (!empty($result)) {
             $result .= ', ';
