@@ -1,12 +1,79 @@
 /* GLOBAL STYLES & OVERRIDES */
 
+:root {
+    font-size: 16px !important;
+}
+
+body {	
+	font-size: 1rem !important;
+	color: #222 !important;
+}
+
+h2, .wpex-h2,
+h3, .wpex-h3,
+h4, .wpex-h4 {
+	color: #222 !important;
+	font-weight: 400 !important;
+}
+h3, .wpex-h3,
+h4, .wpex-h4 {
+	font-family: 'Open Sans', sans-serif !important;
+	letter-spacing: 0.047rem !important; 
+	text-transform: uppercase !important;
+	line-height: 1.4rem !important;
+}
+
+h2, .wpex-h2 {
+	font-family: 'Oswald', 'Open Sans', sans-serif !important;
+	font-size: 1.5rem !important;
+	text-transform: capitalize !important;
+	letter-spacing: 1px !important;
+	margin-bottom: 20px !important;
+}
+
+h3, .wpex-h3 {	
+	font-size: 1.125rem !important;
+}
+
+h4, .wpex-h4 {
+	font-size: 1rem !important;	
+	margin-bottom: 10px !important;
+}
+
+body, 
+.ref-title,
+.ref-date,
+.ref-quote {
+	font-size: 1.125rem !important;
+}
+
+h2, .wpex-h2 {
+	font-size: 1.75rem !important;
+}
+
+h3, .wpex-h3 {	
+	font-size: 1.25rem !important;
+}
+
+h4, .wpex-h4 {
+	font-size: 1.125rem !important
+}
+
+.tech-skills h4 {
+	margin-bottom: unset !important;
+}
+
+.logo-title {
+	font-size: 15px !important;
+} 
+
 .logo-title a {
-    text-transform: uppercase;
-    font-family: 'Opens Sans', sans-serif;
-    font-weight: 300;
-    color: #f7b312;
-    font-size: 14px;
-    margin-top: -5px;
+	text-transform: uppercase;
+	font-family: 'Opens Sans', sans-serif;
+	font-weight: 300;
+	color: #f7b312;
+	font-size: 14px;
+	margin-top: -5px;
 	text-decoration: none;
 }
 
@@ -103,17 +170,21 @@
     font-weight: 400;
 }
 
+.personal-info {
+	font-weight: 500;
+}
+
 .job-title {
     color: #2b373b;
     font-weight: 600;
 }
 
-.co-name {
-    color: #606060;
-    font-weight: 400;
+.company-name {
+	font-weight: 400;
 }
 
 .years {
+	display: block;
     font-size: 14px; 
     font-weight: 300;
 }
@@ -170,8 +241,11 @@ a.link-underline:hover,
     text-shadow: 1px 1px 1px #333;
 }
 
-.ref-title {
-    font-size: 14px;
+.ref-section h2,
+.ref-section h3,
+.education-section h2,
+.education-section h3 {
+	color: #fff !important;
 }
 
 blockquote {
@@ -179,7 +253,6 @@ blockquote {
 }
 
 blockquote .white-text {
-    font-size: 15px;
     font-style: italic;
     letter-spacing: 1.2px;
 }
@@ -200,6 +273,7 @@ blockquote .white-text {
 #ctb-signature {
     font-size: 36px;
 	color: #545e61;
+	letter-spacing: 0 !important;
 }
 
 
@@ -284,6 +358,33 @@ and (max-width: 1280px) {
 ---------------------------------------------------------*/
 @media only screen
 and (max-width: 959px) {
+	
+	:root {
+		font-size: 18px !important;
+	}
+	
+	body, 
+	.ref-title,
+	.ref-date,
+	.ref-quote {
+		font-size: 1rem !important;
+	}
+	
+	h2, .wpex-h2 {
+		font-size: 1.5rem !important;
+	}
+	
+	h3, .wpex-h3 {	
+		font-size: 1.2rem !important;
+	}
+	
+	h4, .wpex-h4 {
+		font-size: 1rem !important
+	} 
+
+	.logo-title a {
+		font-size: 1rem !important;
+	}
 
 	.np-main {
 		float: left !important;
@@ -297,6 +398,10 @@ and (max-width: 959px) {
 	.email-col .vc_column-inner {
 		padding-top: 0 !important;
 	}
+	
+	.button-top-visible {
+		display: none;
+	}	
 
 	.footer-copyright,
 	.footer-social {
@@ -349,15 +454,15 @@ and (max-width: 767px) {
 	#site-header.overlay-header #site-header-inner {
 		padding-top: 12px !important;
 		padding-bottom: 8px !important;
-	}  
-
-	.logo-title {
-		font-size: 13px !important;
-	}  
+	} 
 
 	#header-row {
 		padding-top: 120px !important;
 		padding-bottom: 55px !important;
+	}
+	
+	.blockquote .white-text {
+		font-size: 18px !important;
 	}
 
 	.portfolio-items .vc_col-sm-3 {
@@ -366,10 +471,6 @@ and (max-width: 767px) {
 
 	.vcex-typed-text-wrap .vcex-typed-text {
 		font-size: 20px !important;
-	}
-
-	.button-top-visible {
-		display: none;
 	}
 
 	.footer-copyright,
@@ -383,13 +484,9 @@ and (max-width: 767px) {
 @media only screen
 and (min-width: 480px)
 and (max-width: 767px)
-and (orientation : landscape) {
-    
-	.logo-title {
-		font-size: 14px !important;
-	}
-	
+and (orientation : landscape) {		
+
 	.vcex-typed-text-wrap .vcex-typed-text {
 		font-size: 22px !important;
-	}    
+	}
 }
