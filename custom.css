@@ -310,6 +310,7 @@ blockquote .white-text {
 
 .wpcf7 #contact-submit-btn {
     margin-top: 10px;
+    text-transform: uppercase;
 }
 
 /* FOOTER STYLES */
