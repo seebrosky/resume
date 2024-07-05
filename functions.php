@@ -13,7 +13,9 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
 
 // CUSTOM FUNCTION TO ADD TEXT BELOW LOGO
 function custom_header_text() { ?>
-    <div class="logo-title clr"><a href="/">front-end developer</a></div>
+    <div class="logo-title clr">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Front-end Developer</a>
+    </div>
 <?php }
 add_action( 'wpex_hook_site_logo_inner', 'custom_header_text', 20 );
 
