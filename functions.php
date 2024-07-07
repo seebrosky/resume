@@ -87,11 +87,11 @@ add_shortcode('date_difference', 'calculate_date_difference');
 
 // YEARS BETWEEN DATES CALCULATOR
 // Used to calculate the years of experience I have with technical skills
-function calculate_year_difference_shortcode($atts) {
+function calculate_year_difference($atts) {
     // Extracting shortcode attributes
     $atts = shortcode_atts(
         array(
-            'year_began' => '',
+            'year_began' => '', // Default value is an empty string
         ),
         $atts,
         'year_difference'
@@ -103,9 +103,9 @@ function calculate_year_difference_shortcode($atts) {
     // Convert the provided year_began to an integer
     $yearBegan = intval($atts['year_began']);
 
-    // Check if year_began is not provided or not a valid integer
-    if (empty($yearBegan)) {
-        return 'Please provide a valid value for year_began.';
+    // Check if year_began is not provided, is less than or equal to 0, or is not a valid integer
+    if (empty($yearBegan) || $yearBegan <= 0) {
+        return 'Please provide a valid positive integer for year_began.';
     }
 
     // Calculate the difference
@@ -113,7 +113,7 @@ function calculate_year_difference_shortcode($atts) {
 
     return $difference;
 }
-add_shortcode('year_difference', 'calculate_year_difference_shortcode');
+add_shortcode('year_difference', 'calculate_year_difference');
 
 // REMOVE QUERY STRINGS - Excluding Google Fonts
 function wpex_remove_script_version( $src ) {
