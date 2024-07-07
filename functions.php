@@ -86,7 +86,7 @@ function calculate_date_difference($atts) {
 add_shortcode('date_difference', 'calculate_date_difference');
 
 // YEARS BETWEEN DATES CALCULATOR
-// Used to calculate the years of experience I have with hard skills
+// Used to calculate the years of experience I have with technical skills
 function calculate_year_difference_shortcode($atts) {
     // Extracting shortcode attributes
     $atts = shortcode_atts(
