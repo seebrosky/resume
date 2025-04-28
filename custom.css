@@ -4,9 +4,54 @@
     font-size: 16px !important;
 }
 
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
 body {	
 	font-size: 1rem !important;
 	color: #222 !important;
+}
+
+.outer-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#footer-builder {
+	margin-top: auto;
+}
+
+/* push the footer to the bottom */
+#footer-builder {
+  margin-top: auto;
+}
+
+/* Removes Woocommerce Shopping Cart from Default Menu */
+body.page-id-9 .woo-menu-icon {
+    display: none !important;
+}
+
+.site-main a {
+	font-weight: 600 !important;
+}
+
+h1, .wpex-h1 {
+	font-family: 'Oswald', 'Open Sans', sans-serif !important;
+	font-size: clamp(2.5rem, 6vw, 3.5rem) !important;
+	text-transform: uppercase !important;
+	letter-spacing: 1px !important;
+	color: #222 !important;
+}
+
+h1.white-text, .wpex-h1.white-text {
+	color: #fff !important;
+}
+
+.hero h1 {
+	font-size: clamp(3.5rem, 8vw, 4.5rem) !important;
 }
 
 h2, .wpex-h2,
@@ -15,6 +60,7 @@ h4, .wpex-h4 {
 	color: #222 !important;
 	font-weight: 400 !important;
 }
+
 h3, .wpex-h3,
 h4, .wpex-h4 {
 	font-family: 'Open Sans', sans-serif !important;
@@ -52,13 +98,28 @@ h4, .wpex-h4 {
 	font-size: 1.125rem !important
 }
 
+.mb-5 {
+	margin-bottom: 5px;
+}
+
+.mt-25 {
+	margin-top: 25px;
+}
+
+img[src$=".svg"] {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    display: inline-block;
+}
+
 .tech-skills h4 {
 	margin-bottom: unset !important;
 }
 
 .logo-title {
 	font-size: 15px !important;
-} 
+}
 
 .logo-title a {
 	font-family: 'Opens Sans', sans-serif;
@@ -66,13 +127,40 @@ h4, .wpex-h4 {
 	font-weight: 300;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: #f7b312;
+	color: #ff8613;
 }
 
 .ref-title,
 .ref-date,
 .ref-quote {
 	font-size: 1rem !important;
+}
+
+/* BUTTON STYLES */
+.btn-secondary {
+	text-transform: uppercase;
+	letter-spacing: .07em;
+	padding: 9px 15px;;
+	background-color: #fff;
+	color: var(--wpex-btn-bg);
+    border: 1px solid var(--wpex-btn-bg);
+	border-radius: var(--wpex-btn-border-radius);
+	font-size: var(--wpex-btn-font-size);
+    font-family: var(--wpex-btn-font-family);
+    font-style: var(--wpex-btn-font-style);
+	line-height: var(--wpex-btn-line-height);
+    font-weight: var(--wpex-btn-font-weight);	
+	transition: .15s all ease;
+}
+
+.btn-secondary:hover {
+	background-color: var(--wpex-btn-bg);
+	color: #fff;
+}
+
+/* Responsive main nav item width */
+.main-navigation-ul>.menu-item>a>.link-inner {
+	padding: 8px clamp(2px, 0.4vw, 11px);
 }
 
 #site-navigation .dropdown-menu >li >a,
@@ -87,7 +175,24 @@ h4, .wpex-h4 {
 #site-navigation .dropdown-menu >li >a:hover,
 #site-header.overlay-header.white-style.dyn-styles #site-navigation .dropdown-menu>li.menu-item>a:hover {
     opacity: 1 !important;
-    color: #f7b312 !important;
+    color: #ff8613 !important;
+}
+
+.calendly-overlay {
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	width: 100vw !important;
+	height: 100vh !important;
+	z-index: 9999 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.hero-btn {
+	padding-left: 15px;
 }
 
 /* CUSTOM SCROLL TO TOP BUTTON */
@@ -98,8 +203,9 @@ h4, .wpex-h4 {
 	z-index: 100;
 	width: 35px;
 	height: 35px;
+	font-size: 22px;
 	color: #fff;
-	background-color: #f7b312;
+	background-color: #ff8613;
 	border-radius: 4px;
 	border: 0;
 	text-align: center;
@@ -120,10 +226,20 @@ h4, .wpex-h4 {
 	transition: background-color 0.15s ease-in-out;
 }
 
-.button-top-visible .ticon {
+.button-top-visible .fa-angle-up {
 	width: 35px;
 	height: 35px;
 	text-decoration: none;
+}
+
+.fa-angle-up:before {
+	display: flex;
+	width: 35px;
+	height: 33px;
+	font-size: 22px;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;	
 }
 
 .ticon-chevron-up:before {
@@ -160,12 +276,144 @@ h4, .wpex-h4 {
 }
 
 .personal-info {
+	font-size: 1em;
 	font-weight: 500;
+}
+
+.personal-info-col a {
+	font-weight: 400;
+}
+
+.social-icon-wrapper p {
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+.profile-social-icons {
+    display: inline;
+}
+
+.footer-icon .vcex-list-item-text {
+	line-height: 30px;
+}
+
+/* "Social:" font size */
+.profile-social-icons .personal-info {
+	position: relative;
+	top: 9px;
+	font-size: 1rem;
+}
+
+/* Icon Size */
+.profile-social-icons a {
+	font-size: 1.75rem;
+	margin-right: 8px;
+}
+
+.profile-social-icons a:first-child {
+	margin-left: 5px;
+}
+
+/* LinkedIn Icon */
+.social-icon.linkedin i {
+    color: hsl(210, 100%, 40%);
+}
+
+.footer-row .ticon-linkedin:before {
+    content: "\f08c";
+}
+
+
+/* Instagram Icon */
+.profile-social-icons .social-icon.instagram {
+	display: none !important;
+}
+/* .social-icon.instagram i {
+    color: hsl(339.66, 74.68%, 53.53%);
+} */
+
+
+/* Github Icon */
+.social-icon.github i {
+    color: hsl(264.38, 27.59%, 45.49%);
+}
+
+
+/* Phone Icon */
+.hero-btn-wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: 432px;
+}
+
+.hero-btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;	
+	position: relative;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.hero-btn.theme-button.contact,
+.hero-btn.theme-button.calendly,
+.form-submit-btn.theme-button {
+	display: inline-flex;
+	flex-direction: row;
+    flex-wrap: nowrap;
+	border: none;
+	border-radius: 4px;
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+.hero-btn.theme-button.calendly {
+	background-color: #627AC7;
+}
+
+.hero-btn.theme-button.calendly:hover {
+	background-color: #8A9DDD;
+}
+
+.hero-btn .fa-phone,
+.hero-btn .fa-calendar-plus {
+	position: relative;
+	margin-right: 10px;
+}
+
+.hero-btn .fa-phone {
+	bottom: -2px;
+	font-size: 20px;
+}
+
+.hero-btn .fa-calendar-plus {
+	bottom: 0;
+	font-size: 22px;
+}
+
+.profile-social-icons .social-icon {
+	position: relative;
+	display: inline-block;
+	transition: all 0.125s ease-in-out;
+	opacity: 0.75;
+}
+
+.profile-social-icons .social-icon:hover {
+	opacity: 1;
+	transform: scale(1.1);
 }
 
 .job-title {
     color: #2b373b;
     font-weight: 600;
+}
+
+.privacy-contact-info {
+	margin-bottom: 10px;
 }
 
 .company-name {
@@ -212,12 +460,12 @@ a.link-underline:hover,
     padding-right: 0 !important;
 }
 
-.icon-star .ticon.ticon-star {
-    color: #f7b312;
+.icon-star svg {
+    color: var(--wpex-btn-bg);
     font-size: 13px;
     position: relative;
-    bottom: 1px;
-    margin-right: 8px;
+    bottom: 2px;
+    margin-right: 5px;
 }
 
 .pie-value.vc_pie_chart .vc_pie_chart_value {
@@ -293,22 +541,29 @@ blockquote .white-text {
 .wpcf7 .col input[type="text"],
 .wpcf7 .col input[type="email"],
 .wpcf7 textarea.wpcf7-textarea {
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    background: transparent;
+    border-radius: 4px;
+    background: #f8f8f8;
     margin-top: 0 !important;
-    padding: 6px 8px 12px !important;
-    color: #4b525b;
+    padding: 8px 10px !important;
+    color: #222;
+	font-weight: 400;
 }
 
 .wpcf7 textarea {
-    height: 180px;
+    height: 112px;
 }
 
 .wpcf7 #contact-submit-btn {
-    margin-top: 10px;
-    text-transform: uppercase;
+    margin-top: 30px;
+	text-transform: uppercase;
+}
+
+.wpcf7 #contact-submit-btn input {
+	margin-bottom: 10px;
+}
+
+.wpcf7 form .wpcf7-response-output {
+	margin: 0;
 }
 
 /* FOOTER STYLES */
@@ -320,34 +575,154 @@ blockquote .white-text {
     margin-bottom: 0 !important;
 }
 
-.footer-copyright {
-	font-size: 12px;
-	line-height: 40px;
+.copyright-wrapper {
+	min-height: 45px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: left;
+	align-items: center;
+}
+
+.footer-copyright,
+.footer-copyright a,
+.woocommerce-cart .footer-copyright {
+	font-weight: 300 !important;
+	font-size: 14px !important;
 	color: #808080 !important;
 }
 
+.footer-copyright a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.footer-copyright a:hover,
+.footer-copyright a:active {
+	text-decoration: underline;
+	color: #fff !important;
+}
+
+.footer-social {
+	min-height: 45px;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+}
+
+.footer-row .footer-social a {
+	margin: 0 0 0 5px;
+}
+
+/* CF7 STYLES */
+input[type="date"]:focus, input[type="time"]:focus, input[type="datetime-local"]:focus, input[type="week"]:focus, input[type="month"]:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="number"]:focus, textarea:focus, .wp-block-post-comments-form input:not([type=submit]):focus, .wp-block-post-comments-form textarea:focus {
+	border-color: var(--wpex-btn-bg) !important;
+}
+
+select {
+	position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 100%;
+    padding-block: 0;
+    padding-inline-end: calc(.875em + 10px + .75em);
+    padding-inline-start: .75em;
+    color: inherit;
+    height: var(--wpex-select-height);
+    line-height: var(--wpex-select-height);
+    border: 0;
+    outline: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+
+/* WOOCOMMERCE STYLES */
+
+.woocommerce.single-product .site-main {
+	margin-top: 70px;
+}
+
+.woocommerce .product-details h2 {
+	margin-bottom: 5px !important;
+}
+
+.woocommerce .button,
+.woocommerce .place-order .button,
+.single_add_to_cart_button.button,
+.woocommerce-Reviews .submit {
+	text-transform: uppercase;
+}
+
+.woocommerce-cart-form .shop_table {
+	margin-bottom: 5px;
+}
+
+.cart-promo-code {
+	margin: 5px 0 30px 12px;
+}
+
+.product_meta .sku_wrapper,
+.product_meta .tagged_as {
+	display: none;
+}
+
+.wpex-card-sale-flash {
+	background-color: #F02C2C;
+}
+
+.woocommerce-form-coupon-toggle,
+.checkout_coupon.woocommerce-form-coupon {
+	display: none;
+}
+
+.woocommerce-message a {
+	color: var(--wpex-btn-bg);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.woocommerce-breadcrumb {
+	margin-bottom: 10px;
+}
+
+.woocommerce-thank-you-text {
+	font-size: 22px;
+	font-weight: bold;
+	color: var(--wpex-btn-bg);
+}
+
+.woocommerce .out-of-stock {
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+.cart_totals .wc-proceed-to-checkout {
+	margin-top: 20px;
+}
 
 /* =====================================================
    ================= RESPONSIVE STYLES =================
    ===================================================== */
 
-/* Greater than tablets
--------------------------------------------------------------- */
-@media only screen
-and (min-width: 768px) {
+
+/* All Devices over 1024px
+---------------------------------------------------------*/
+@media only screen and (min-width: 1024px) {
+	.hero-btn-wrapper {
+		max-width: 405px;
+	}
 }
 
-/* Tablet & Small Desktop Widths 768px - 1280px
----------------------------------------------------------*/
-@media only screen
-and (min-width: 768px)
-and (max-width: 1280px) {
-}
 
-/* All Devices under 960px
+/* All Devices under 991px
 ---------------------------------------------------------*/
-@media only screen
-and (max-width: 959px) {
+@media only screen and (max-width: 991px) {
 	
 	:root {
 		font-size: 18px !important;
@@ -372,6 +747,10 @@ and (max-width: 959px) {
 		font-size: 1rem !important
 	} 
 	
+	.hero-section {
+		padding-top: 80px;
+	}
+	
 	.blockquote .white-text {
 		font-size: 18px !important;
 	}
@@ -395,13 +774,138 @@ and (max-width: 959px) {
 	
 	.button-top-visible {
 		display: none;
-	}	
+	}
+	
+	.profile-social-icons {
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin-top: 20px;
+	}
+	
+	.profile-social-icons .social-icon {
+		opacity: 1 !important;
+		top: 0 !important;
+		transition: unset;
+	}
+	
+	.profile-social-icons .social-icon:hover,
+	.profile-social-icons .social-icon:active {
+		transform: unset;
+	}
+	
+	.profile-social-icons a {
+		font-size: 2.75rem;
+		margin: 0 10px;
+	}
+	
+	.profile-social-icons a:first-child {
+		margin-left: 0;
+	}
+	
+	.profile-social-icons .personal-info {
+		font-size: 1rem;
+	}
 
-	.footer-copyright,
-	.footer-social {
+	.personal-info.social {
+		display: none !important;
+	}
+
+	.footer-copyright {
 		display: block;
 		text-align: center !important;
 	}
+	
+	.footer-row .footer-social {
+		padding-bottom: 20px;
+	}	
+}
+
+/* Phone Portrait
+---------------------------------------------------------*/
+@media only screen
+and (max-width: 768px) and (orientation: portrait) {
+	
+	#header-row {
+		padding-top: 60px !important;
+        padding-bottom: 40px !important;
+	}
+	
+	.hero-section .vcex-animated-text,
+	.hero-section .hero-image,
+	.hero-section h1 {
+		text-align: center;
+	}
+	
+	.hero-section .vcex-animated-text {
+		min-height: 55px;
+	}	
+	
+	.hero-section .hero-image img {
+		width: 310px;
+		height: auto;
+	}
+	
+	.hero-info {
+		display: flex;
+		flex-direction: row;
+    	justify-content: center;
+		padding: 0 22px;
+	}
+	
+	.hero-info p {
+		text-align: justify;
+		max-width: 81vw;
+	}	
+	
+	.hero-btn-wrapper {
+		margin: 0 auto;
+	}
+	
+	.hero-btn {
+		float: unset !important;
+		width: 62.25vw;
+		max-width: 250px;
+		align-items: center;
+		margin: 0 auto 20px;
+	}
+	
+	.hero-btn .ticon-calendar {
+		bottom: 1px;
+	}
+		
+	.footer-row .footer-social a {
+		font-size: 2.25rem;
+		margin: 0 25px !important;
+	}	
+}
+
+
+/* Phone Landscape
+---------------------------------------------------------*/
+@media only screen
+and (max-width: 959px)
+and (orientation: landscape) {
+	
+	
+	#header-row {
+		padding-top: 180px !important;
+        padding-bottom: 0 !important;
+	}	
+	
+	.hero-section {
+		width: 100%;
+	}
+	
+	.footer-row .footer-social {
+		position: relative;
+		top: 2px;	
+		padding-bottom: 0;
+	}	
+
+	.vcex-typed-text-wrap .vcex-typed-text {
+		font-size: 22px !important;
+	}		
 }
 
 /* Tablet Landscape
@@ -410,22 +914,31 @@ and (max-width: 959px) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape) {
+	
+	.footer-row .footer-social {
+		position: relative;
+		top: 3px;	
+		padding-bottom: 0;
+	}	
     
 	.footer-copyright {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		text-align: left !important;
 	}
-
-	.footer-social {
-		text-align: right !important;
-	}    
 }
 
 /* Tablet Portrait
 ---------------------------------------------------------*/
 @media only screen
 and (min-width: 768px)
-and (max-width: 959px)
+and (max-width: 991px)
 and (orientation : portrait) {
+	
+	.hero-section {
+		width: 100%;
+	}	
     
 	.portfolio-items .vc_col-sm-3 {
 		width: 50% !important;
@@ -435,25 +948,21 @@ and (orientation : portrait) {
 		text-align: left !important;
 	}
 
-	.footer-social {
-		text-align: right !important;
-	}    
+	.hero-info p {
+		text-align: justify;
+		max-width: 54vw;
+		padding: 0;
+	}
 }
 
 /* iPhone Portrait and Landscape
 ---------------------------------------------------------*/
-@media only screen
-and (max-width: 767px) {
+@media only screen and (min-width: 520px) and (max-width: 767px) {
     
 	#site-header.overlay-header #site-header-inner {
 		padding-top: 12px !important;
 		padding-bottom: 8px !important;
 	} 
-
-	#header-row {
-		padding-top: 120px !important;
-		padding-bottom: 55px !important;
-	}
 	
 	.blockquote .white-text {
 		font-size: 18px !important;
@@ -461,26 +970,112 @@ and (max-width: 767px) {
 
 	.portfolio-items .vc_col-sm-3 {
 		width: initial !important;
-	}  
+	} 
 
 	.vcex-typed-text-wrap .vcex-typed-text {
 		font-size: 20px !important;
 	}
+	
+	.footer-copyright {
+		font-size: 0.85rem;
+	}
 
 	.footer-copyright,
 	.footer-social {
-		text-align: center !important;
-	}    
+		text-align: center !important;	
+	} 
+	
+	.copyright-wrapper {
+		justify-content: center;
+		align-items: center;
+	}
+
+	.footer-social {
+		justify-content: center;
+	}  	
+	
+	.copyright-item .privacy {
+		width: 100%;
+	}
 }
 
-/* Phone Landscape
----------------------------------------------------------*/
-@media only screen
-and (min-width: 480px)
-and (max-width: 767px)
-and (orientation : landscape) {		
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+	
+	.wpcf7 #contact-submit-btn input { 
+		width: 100%;
+	}
+	
+	.woocommerce-checkout-payment .place-order button {
+		margin-bottom: 15px;
+	}
+	
+	.thwmscf-buttons {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		row-gap: 15px;
+	}
 
-	.vcex-typed-text-wrap .vcex-typed-text {
-		font-size: 22px !important;
+	.thwmscf-buttons input,
+	.thwmscf-buttons a {
+		min-width: 48%;
+	}
+	
+	.continue-shopping {
+		text-align: center;	
+	}
+
+	.continue-shopping a {
+		width: 100%;
+		margin-top: 20px;
+	}
+	
+	.wpcf7 input[type="submit"] {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.vcex-icon-box {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 15px 20px;
+	}
+	
+	.vcex-icon-box .vcex-icon-box-symbol--icon {
+		margin-right: 0;
+		margin-bottom: 5px;
+	}
+}
+
+
+@media only screen and (min-width: 300px) and (max-width: 519px) {
+	.copyright-wrapper {
+        justify-content: center;
+		margin: 10px 0;
+	}
+	
+	.footer-social {
+		justify-content: center;
+	}
+			
+	.thwmscf-buttons input,
+	.thwmscf-buttons a {
+		min-width: 48%;
+	}
+}
+
+@media only screen and (max-width: 502px) {
+	.copyright-wrapper {
+		max-width: 340px;
+		margin: 15px auto;
+	}
+	
+	.footer-pipe {
+		display: none;
 	}
 }
