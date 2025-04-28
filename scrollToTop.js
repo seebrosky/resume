@@ -1,22 +1,41 @@
-jQuery(function ($) {
-    var $window = $(window);
-    var $buttonTop = $('.button-top');
-    var scrollTimer;
+jQuery(function($) {
+  var $win    = $(window),
+      $btn    = $('.button-top'),
+      idle    = null,
+      idleMs  = 2250;   // fade‐out timer for when no activity
 
-    $buttonTop.on('click', function () {
-        $('html, body').animate({
-            scrollTop: 0,
-        }, 500);
-    });
+  function showBtn() {
+    if ( $win.scrollTop() > 100 ) {
+      $btn
+        .addClass('button-top-visible')
+        .stop(true)     // stop any running fade
+        .css('display','block'); // ensure it’s in the flow
+      restartIdleTimer();
+    }
+  }
 
-    $window.on('scroll', function () {
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(function() {
-            if ($window.scrollTop() > 100) {
-                $buttonTop.addClass('button-top-visible');
-            } else {
-                $buttonTop.removeClass('button-top-visible');
-            }
-        }, 250);
-    });  
+  function hideBtn() {
+    $btn
+      .removeClass('button-top-visible');
+  }
+
+  function restartIdleTimer() {
+    clearTimeout(idle);
+    idle = setTimeout(hideBtn, idleMs);
+  }
+
+  // Scroll → show immediately, then schedule hide
+  $win.on('scroll', function() {
+    showBtn();
+  });
+
+  // Mousemove → same as scroll for showing/resetting
+  $(document).on('mousemove', function() {
+    showBtn();
+  });
+
+  // Click-to-top:
+  $btn.on('click', function() {
+    $('html, body').animate({ scrollTop: 0 }, 500);
+  });
 });
