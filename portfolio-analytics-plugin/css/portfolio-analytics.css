@@ -1,0 +1,161 @@
+/* Realtime widget */
+.pa-realtime-standalone strong {
+  display: block;
+  margin-bottom: .5em;
+}
+.pa-users-wrapper.pa-section {
+  margin-bottom: 1rem;
+}
+#pa-realtime-count {
+  font-size: 2rem;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 600;
+  color: #222 !important;
+  box-sizing: border-box;
+}
+#pa-realtime-refresh {
+  margin-top: 1rem;
+}
+
+/* Historical widget */
+.pa-hist-heading {
+  margin: 1.5em 0 .5em;
+  font-size: 1.25em;
+}
+.pa-data-wrapper {
+  display: flex;
+  gap: 30px;
+  row-gap: 20px;
+  margin-bottom: 20px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.locale-consent {
+	padding: 20px 0 8px;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.pa-map-caption {
+	margin-left: 5px;
+	font-weight: 600;
+	text-align: left;
+	font-style: italic; 
+}
+
+/* Table */
+.pa-table-container {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+.pa-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.pa-table th,
+.pa-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.pa-table th {
+  background: #f1f1f1;
+  text-align: left;
+}
+
+/* Map */
+.pa-user-map {
+  width: 100%;
+  height: 300px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Utility */
+.analytics-bold-text {
+  font-weight: bold;
+}
+
+/* Section panels */
+.pa-section {
+  position: relative;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 15px 15px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+.pa-section h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-weight: 600 !important;
+}
+.pa-section > div {
+  flex: 1;
+}
+.reset-btn button {
+  width: 100%;
+}
+.pa-section .data-header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 5px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Section background colors */
+.pa-section.pa-realtime-standalone .data-header,
+.pa-section.new-returning .data-header {
+  background-color: #D2E3FC;
+}
+.pa-section.device-data .data-header {
+  background-color: #FAD2CF;
+}
+.pa-section.browser-text .data-header {
+  background-color: #FEEFC3;
+}
+.pa-section.channel-text .data-header {
+  background-color: #CEEAD6;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .pa-table-container {
+    display: block;
+    width: 100%;
+  }
+  .pa-user-map {
+    height: 200px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .pa-data-wrapper {
+    flex-wrap: wrap;
+  }
+  .pa-section {
+    flex: 1 1 47%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 767px) {
+  .pa-data-wrapper {
+    flex-wrap: wrap;
+  }
+  .pa-section {
+    flex: 1 1 100%;
+  }
+  .pa-users-wrapper,
+  .pa-users-wrapper .reset-btn {
+    text-align: center;
+  }
+}
