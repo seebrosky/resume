@@ -38,12 +38,17 @@ body.page-id-9 .woo-menu-icon {
 	font-weight: 600 !important;
 }
 
+.page-template-acf-openai-summary .site-main {
+	padding-top: 15px;
+	padding-bottom: 50px;
+}
+
 h1, .wpex-h1 {
 	font-family: 'Oswald', 'Open Sans', sans-serif !important;
 	font-size: clamp(2.5rem, 6vw, 3.5rem) !important;
 	text-transform: uppercase !important;
 	letter-spacing: 1px !important;
-	color: #222 !important;
+	color: var(--wpex-accent) !important;
 }
 
 h1.white-text, .wpex-h1.white-text {
@@ -97,13 +102,54 @@ h3, .wpex-h3 {
 h4, .wpex-h4 {
 	font-size: 1.125rem !important
 }
+.m-0 {
+	margin: 0;
+}
+
+.mt-0 {
+	margin-top: 0;
+}
+.mt-1 {
+	margin-top: 1rem;
+}
+.mt-2 {
+	margin-top: 1.5rem;
+}
+.mt-3 {
+	margin-top: 2rem;
+}
+.mt-4 {
+	margin-top: 2.5rem;
+}
+.mt-5 {
+	margin-top: 3rem;
+}
+.mt-25 {
+	margin-top: 25px;
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
 
 .mb-5 {
 	margin-bottom: 5px;
 }
 
-.mt-25 {
-	margin-top: 25px;
+.mb-40 {
+	margin-bottom: 40px;
+}
+
+.mb-50 {
+	margin-bottom: 50px;
+}
+
+.p-0 {
+	padding: 0;
+}
+
+.text-center {
+	text-align: center;
 }
 
 img[src$=".svg"] {
@@ -136,6 +182,13 @@ img[src$=".svg"] {
 	font-size: 1rem !important;
 }
 
+code {
+	background: #F2F4F5;
+	margin: 0;
+	padding: 0 4px;
+	font-family: monospace, sans-serif;
+}
+
 /* BUTTON STYLES */
 .btn-secondary {
 	text-transform: uppercase;
@@ -156,6 +209,26 @@ img[src$=".svg"] {
 .btn-secondary:hover {
 	background-color: var(--wpex-btn-bg);
 	color: #fff;
+}
+
+.btn-tertiary {
+	text-transform: uppercase;
+	letter-spacing: .07em;
+	padding: 9px 15px;
+	background-color: #e9e9e9;;
+	color: #333;
+	border: 1px solid #333;
+	border-radius: var(--wpex-btn-border-radius);
+	font-size: var(--wpex-btn-font-size);
+	font-family: var(--wpex-btn-font-family);
+	font-style: var(--wpex-btn-font-style);
+	line-height: var(--wpex-btn-line-height);
+	font-weight: var(--wpex-btn-font-weight);	
+	transition: .15s all ease;
+}
+
+.btn-tertiary:hover {
+	background-color: #f3f0f0;
 }
 
 /* Responsive main nav item width */
@@ -294,6 +367,10 @@ img[src$=".svg"] {
     display: inline;
 }
 
+.custom-hr {
+	margin: 0;
+}
+
 .footer-icon .vcex-list-item-text {
 	line-height: 30px;
 }
@@ -338,7 +415,6 @@ img[src$=".svg"] {
 .social-icon.github i {
     color: hsl(264.38, 27.59%, 45.49%);
 }
-
 
 /* Phone Icon */
 .hero-btn-wrapper {
@@ -529,6 +605,10 @@ blockquote .white-text {
     margin-bottom: 5px !important;
 }
 
+.wpcf7 .newsletter-form > .span_1_of_1.col {
+	margin-bottom: 0 !important;
+}
+
 .wpcf7-form p {
     margin-bottom: 0 !important;
 }
@@ -564,6 +644,10 @@ blockquote .white-text {
 
 .wpcf7 form .wpcf7-response-output {
 	margin: 0;
+}
+
+.wpcf7-response-output {
+	transition: opacity 0.5s ease-out;
 }
 
 /* FOOTER STYLES */
@@ -641,8 +725,58 @@ select {
     cursor: pointer;
 }
 
+.wpcf7 .newsletter-form .col input[type="text"], 
+.wpcf7 .newsletter-form .col input[type="email"], 
+.wpcf7 .newsletter-form textarea.wpcf7-textarea {
+	font-family: 'Lora', serif;
+	font-size: 1.1rem;
+}
+
+/* ACCORDIAN STYLES */
+.info-toggle h2 {
+	margin: 0 !important;
+}
+
+.info-toggle .vcex-toggle__title {
+	color: #1676AD !important;
+}
+
+.info-toggle .vcex-toggle__title:hover,
+.info-toggle .vcex-toggle__title:active {
+	color: #0037A5 !important;
+}
+
+.info-toggle .vcex-toggle__content ol,
+.accordian-content ol {
+	margin-bottom: 10px;
+}
+
+.info-toggle .vcex-toggle__content ul > li,
+.accordian-content ul > li {
+	margin-bottom: 10px;
+}
+
+.info-toggle .vcex-toggle__content,
+.accordian-content .vcex-toggle__content {
+	padding: 0 15px 0 40px;
+}
+
 
 /* WOOCOMMERCE STYLES */
+
+/* Hide the main menu cart icon everywhere… */
+.woo-menu-icon {
+  display: none !important;
+}
+
+/* …except on page IDs 6749, 6729, 6741, and 6751 */
+body.woocommerce-shop .woo-menu-icon,
+body.page-id-6749 .woo-menu-icon,
+body.page-id-6741 .woo-menu-icon,
+body.page-id-6751 .woo-menu-icon {
+  display: list-item !important;
+}
+
 
 .woocommerce.single-product .site-main {
 	margin-top: 70px;
@@ -702,9 +836,118 @@ select {
 	font-size: 18px;
 }
 
+.woocommerce .continue-shopping,
 .cart_totals .wc-proceed-to-checkout {
 	margin-top: 20px;
 }
+
+
+/* EMAIL TEMPLATE PAGE STYLES - BLAMMO! */
+.page-template-acf-openai-summary h2 {
+	margin-top: 0;
+}
+
+.email-screenshot {
+	box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.3);
+    border: 1px solid #d4d4d4;
+}
+
+.my-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 15px;
+}
+
+.gallery-item img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.gallery-item figcaption {
+	font-size: .875rem;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.glightbox-clean .gdesc-inner {
+    padding: 5px 20px;
+}
+
+.hero.video {
+	position: relative;
+	padding-left: 0;
+	padding-right: 0;
+	background-color: #333741;
+}
+
+.hero.video .hero-inner {        
+	padding: 15px;     
+	color: #fff;            
+	text-align: center;     
+}
+
+.hero.video .hero-inner .wpex-h1 {
+	display:block;
+	margin-top: 0;
+}
+
+.hero.video .hero-inner p {
+	margin-bottom: 5px;
+}
+
+.video-embed .video-caption {
+	font-size: 14px !important;
+	font-weight: 600;
+	font-style: italic;
+	margin-top: 0;
+	text-align: center;
+}
+
+.log-tagline {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	justify-content: center;
+	padding: 10px 0;
+}
+
+.log-tagline .log-image {
+	flex: 0 0 auto;
+	max-width: 140px;
+	width: 100%;
+	height: auto;
+}
+
+.log-tagline .log-tagline-text {
+	font-family: 'Bangers', sans-serif;
+	font-size: clamp(29px, 5.1vw, 64px);
+	letter-spacing: 2px;
+	color: #fff;
+	text-shadow: -4px 5px 1px #333;
+	flex: 1 1 auto;
+	margin-left: 40px;
+	white-space: nowrap;
+}
+
+.newsletter-btn {
+	background-color: #23c4d8;
+	color: #f3e60c;
+	font-family: 'Bangers', sans-serif;
+	text-shadow: -3px 3px 1px #333;
+	font-size: 26px !important;
+	width: 100%;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+
+.newsletter-btn:hover,
+.newsletter-btn:active {
+	color: #fff;
+	background-color: #E44C35;
+}
+
+
 
 /* =====================================================
    ================= RESPONSIVE STYLES =================
@@ -818,7 +1061,8 @@ select {
 	
 	.footer-row .footer-social {
 		padding-bottom: 20px;
-	}	
+	}
+	
 }
 
 /* Phone Portrait
@@ -1050,6 +1294,22 @@ and (orientation : portrait) {
 		margin-right: 0;
 		margin-bottom: 5px;
 	}
+	
+	.hero-inner {
+		padding: 1.5rem .75rem;
+	}	
+	
+	.log-tagline .log-image {
+		max-width: 100px;
+	}
+	
+	.log-tagline .log-tagline-text {
+		margin-left: 15px;
+		text-align: center;
+		white-space: wrap;
+		text-shadow: -3px 3px 1px #333;
+	}
+	
 }
 
 
