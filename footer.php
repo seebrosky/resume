@@ -76,9 +76,25 @@
 // Important WordPress Hook - DO NOT DELETE!
 wp_footer(); ?>
 
-<!-- CUSTOM SCROLL TO TOP BUTTON -->
-<a class="button-top">
-    <span class="ticon ticon-chevron-up" aria-hidden="true"></span>
+<!-- Fades out CF7 messages after 2.5 secs -->
+<script>
+  document.addEventListener('wpcf7mailsent', function(event) {
+    var resp = event.target.querySelector('.wpcf7-response-output');
+    if (!resp) return;
+
+    setTimeout(function() {
+      resp.style.opacity = '0';
+      resp.addEventListener('transitionend', function() {
+        resp.style.display = 'none';
+      }, { once: true });
+    }, 2500);
+  }, false);
+</script>
+
+
+<!-- Scroll to Top Button -->
+<a class="button-top" title="Scroll to Top">
+    <span class="fa fa-solid fa-angle-up" aria-hidden="true"></span>
     <span class="screen-reader-text">Back To Top</span>
 </a>
 
